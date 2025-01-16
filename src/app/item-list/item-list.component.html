@@ -1,0 +1,30 @@
+<div>
+    <h2>{{ filterStatus ? filterStatus.charAt(0).toUpperCase() + filterStatus.slice(1) : 'All' }} Items</h2>
+    <button (click)="navigateToAddItem()">Add Item</button>
+    <br>
+    <br>
+    
+    <table border="solid ">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items">
+            <td>{{ item.name }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.category }}</td>
+            <td>
+              <button (click)="editItem(item.id)">Edit</button>
+              <button (click)="deleteItem(item.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+  

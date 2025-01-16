@@ -1,0 +1,8 @@
+{
+  "routes": [
+    "/add-item",
+    "/all-items",
+    "/completed",
+    "/important"
+  ]
+}

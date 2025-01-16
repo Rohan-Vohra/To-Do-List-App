@@ -1,0 +1,39 @@
+<form [formGroup]="itemForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Item Name</label>
+      <input id="name" formControlName="name" type="text" />
+      @if(itemForm.controls['name'].invalid && itemForm.controls['name'].touched){
+        <span>Item name is missing</span>
+      }
+    </div>
+    <div>
+      <label for="quantity">Quantity</label>
+      <input id="quantity" formControlName="quantity" type="text" />
+      @if(itemForm.controls['quantity'].invalid && itemForm.controls['quantity'].touched){
+        <span>Quantity name is missing</span>
+      }
+    </div>
+    <div>
+      <label for="category">Category</label>
+      <select id="category" formControlName="category">
+        <option value="Home">Home</option>
+        <option value="Office">Office</option>
+        <option value="Trip">Trip</option>
+      </select>
+      @if(itemForm.controls['category'].invalid && itemForm.controls['category'].touched){
+        <span>Category name is missing</span>
+      }
+    </div>
+    <div>
+      <label for="status">Status</label>
+      <select id="status" formControlName="status">
+        <option value="important">Important</option>
+        <option value="completed">Completed</option>
+      </select>
+      @if(itemForm.controls['status'].invalid && itemForm.controls['status'].touched){
+        <span>Status is missing</span>
+      }
+    </div>
+    <button type="submit">{{ itemId ? 'Update' : 'Add' }} Item</button>
+  </form>
+  
